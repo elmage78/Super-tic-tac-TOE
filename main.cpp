@@ -31,5 +31,12 @@ int main()
         }
         PlayinX = !PlayinX;
     }
+    if (CurrentBoard.IsTie == true){
+        std::cout<< u8"\033[2J\033[1;1H";
+        cout << "--------------The MATCH ended in a TIE--------------"
+    } else {
+        string Now = (CurrentBoard.WhoWon== true)? "X" : "O";
+        cout << "--------------The MATCH was won by "<< Now <<"--------------"
+    }
     return 0;
 }
