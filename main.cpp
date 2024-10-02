@@ -19,14 +19,19 @@ int main()
             Yboard = CurrentBoard.LastPlayedY;
         }
         if (Xboard > 3 || Xboard <= 0 || Yboard > 3 || Yboard <= 0){
-            cout << "that coordinate is not valid, select a coordinate ranging 1-3 in x and y";
+            cout << "that coordinate is not valid, select a coordinate ranging 1-3 in x and y \n\n";
+            CurrentBoard.SpecialMove = 1;
+            CurrentBoard.PrintBoard(CurrentBoard.LastPlayedX, CurrentBoard.LastPlayedY);
             continue;
         }
         if (CurrentBoard.Whole[Yboard-1][Xboard-1] != 0){
             cout << "that board is already won select another one \n\n";
+            CurrentBoard.SpecialMove = 1;
+            CurrentBoard.PrintBoard(CurrentBoard.LastPlayedX, CurrentBoard.LastPlayedY);
             continue;
         }
         CurrentBoard.PlayWherever(PlayinX,Xboard,Yboard);
+        CurrentBoard.Update();
         if (CurrentBoard.SpecialMove == 1){
             continue;
         }
