@@ -97,7 +97,7 @@ public:
             }
             string Now = (WhoPlayin== true)? "X" : "O";
             cout << "---------------- Playing " << Now << " ----------------------\n";
-            cout << "the current board is the " << Where << "and the current state is \n"; PrintBoard(X,Y);
+            cout << "the current board is the " << Where << " and the current state is \n"; PrintBoard(X,Y);
             int Movex,Movey;
             cout << "tell me the coordinates you'd like to place an "<< Now <<" X: "; ;cin>>Movex;cout<<"y: ";cin>>Movey;
             while(Boards[Y-1][X-1].Whole[Movey-1][Movex-1] != 0){
